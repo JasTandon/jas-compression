@@ -17,7 +17,7 @@ JAS Compression is a custom text compression library that uses tokenization, spe
 You can install the package via PyPI:
 
 ```bash
-pip install jas
+pip install jas-compression
 
 ```
 Or, for the latest development version, clone the repository and install it locally:
@@ -67,4 +67,4 @@ jas-compression/
 Contributions are welcome! Please open an issue or submit a pull request on GitHub. Make sure to follow the existing code style and include tests for any new features.
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License.

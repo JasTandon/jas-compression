@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="jas",  # This is the package name users will install via pip install jas
+    name="jas-compression",  # This is the package name users will install via pip install jas
     version="1.0.0",
     author="Jas Tandon",
     author_email="jastandon@icloud.com",
@@ -23,5 +23,4 @@ setuptools.setup(
         "tqdm",
         "PyYAML",
     ],
-    license_files=["LICENSE"],
 )
