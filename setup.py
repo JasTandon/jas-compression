@@ -1,10 +1,5 @@
-import setuptools
-
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
 setuptools.setup(
-    name="jas",  # This makes the package installable via "pip install jas"
+    name="jas",
     version="1.0.0",
     author="Jas Tandon",
     author_email="jastandon@icloud.com",
@@ -23,4 +18,5 @@ setuptools.setup(
         "tqdm",
         "PyYAML",
     ],
+    license_files=["LICENSE"],
 )
