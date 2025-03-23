@@ -1,3 +1,5 @@
+import setuptools
+
 setuptools.setup(
     name="jas",
     version="1.0.0",
