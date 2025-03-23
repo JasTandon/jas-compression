@@ -45,7 +45,7 @@ python -m jas.cli decompress output.jas result.txt --verbose
 
 ## Project Structure
 ```bash
-jas/
+jas-compression/
 ├── jas/
 │   ├── __init__.py
 │   ├── compressor.py
