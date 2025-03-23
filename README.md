@@ -1,68 +1,70 @@
-# JAS - Custom Text Compression Format
+# JAS - Custom Text Compression Library
 
 [![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](htmlcov/index.html)
 
-JAS is a Python-based, word-level text compression tool using dictionary encoding, run-length encoding (RLE), and case flagging.
+JAS Compression is a custom text compression library that uses tokenization, specialized preprocessing for different text-based formats, and deterministic Huffman encoding to compress and decompress text files. The project is designed to handle plain text, JSON, CSV, XML, and YAML formats.
 
 ## Features
 
-- Custom `.jas` binary format for text compression
-- Case-insensitive compression with case flags for accurate restoration
-- Supports plain text, JSON, CSV, code, subtitles, and more
-- Command-line interface:
-  - `jas compress <input> <output>`
-  - `jas decompress <input> <output>`
-  - `jas debug <input>`
-- Extensive tests with coverage reports
+- **Tokenization:** Breaks text into tokens (words, punctuation, whitespace, etc.).
+- **Special Phrase Detection:** Identifies and replaces frequently occurring special phrases to improve compression.
+- **Deterministic Huffman Encoding:** Uses a deterministic Huffman tree for consistent encoding and decoding.
+- **Format-Specific Preprocessing:** Supports normalization for JSON, CSV, XML, and YAML files.
+- **Command-Line Interface:** Provides a CLI for compression and decompression with verbose logging and progress bars.
 
 ## Installation
 
-To install from PyPI:
+You can install the package via PyPI:
+
 ```bash
 pip install jas
 
-## For development:
+```
+Or, for the latest development version, clone the repository and install it locally:
 
-git clone https://github.com/yourusername/jas.git
+```bash
+git clone https://github.com/yourusername/jas-compression.git
 cd jas
-pip install -e .
+pip install .
+```
 
 ## Usage
+# Compression
 
-- Compress a file:
-jas compress input.txt output.jas
+To compress a text file:
+```bash
+python -m jas.cli compress input.txt output.jas --verbose
+```
 
-- Decompress:
-jas decompress output.jas result.txt
+# Decompression
 
-- Debug Tokenization:
-jas debug input.txt
+To decompress a .jas file:
+```bash
+python -m jas.cli decompress output.jas result.txt --verbose
+```
 
-## Running Tests
-Use the provided Makefile:
+## Project Structure
+```bash
+jas/
+├── jas/
+│   ├── __init__.py
+│   ├── compressor.py
+│   ├── decompressor.py
+│   ├── cli.py
+│   ├── huffman.py
+│   ├── tokenizer.py
+│   ├── structured.py
+│   ├── utils.py
+│   └── bitstream.py
+├── README.md
+├── setup.py
+├── MANIFEST.in
+├── LICENSE
+└── requirements.txt
+```
 
-make test
-make coverage
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request on GitHub. Make sure to follow the existing code style and include tests for any new features.
 
 ## License
-MIT License
-
-
----
-
-### 12. `Makefile`
-```makefile
-.PHONY: test coverage clean
-
-test:
-	pytest -v
-
-coverage:
-	coverage run -m pytest
-	coverage report -m
-	coverage html
-	@echo "Open htmlcov/index.html to view the coverage report."
-
-clean:
-	rm -rf .pytest_cache __pycache__ .coverage htmlcov dist build *.egg-info
-
+This project is licensed under the MIT License. See the LICENSE file for details.

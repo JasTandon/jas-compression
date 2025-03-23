@@ -1,18 +1,17 @@
-### setup.py
 import setuptools
 
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="jas-compression",
+    name="jas",  # This makes the package installable via "pip install jas"
     version="1.0.0",
-    author="Your Name",
-    author_email="youremail@example.com",
+    author="Jas Tandon",
+    author_email="jastandon@icloud.com",
     description="A custom text compression library using tokenization and Huffman encoding.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/jas-compression",
+    url="https://github.com/JasTandon/jas-compression",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
